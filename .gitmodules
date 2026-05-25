@@ -4,3 +4,15 @@
 [submodule "lab2"]
 	path = lab2
 	url = https://github.com/Eydo99/Matrix-Multiplications-Threads-.git
+[submodule "project"]
+	path = project
+	url = https://github.com/Eydo99/CSEx61-dockerized-pintos.git
+[submodule "lab4"]
+	path = lab4
+	url = https://github.com/Eydo99/redlock-simulation.git
+[submodule "lab5"]
+	path = lab5
+	url = https://github.com/Eydo99/Custom-CPU-Scheduler-IPC-Simulation.git
+[submodule "lab3"]
+	path = lab3
+	url = https://github.com/Eydo99/Concurrency-Lab.git
