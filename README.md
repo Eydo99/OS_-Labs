@@ -13,8 +13,8 @@ Each lab is an independent repository linked here as a Git submodule.
 | [Lab 1](#lab-1--simple-unix-shell) | Simple Unix Shell | C | `fork`, `execvp`, signals, environment variables |
 | [Lab 2](#lab-2--multithreaded-matrix-multiplication) | Multithreaded Matrix Multiplication | C | `pthreads`, performance comparison |
 | [Lab 3](#lab-3--caltrain-thread-synchronization) | Caltrain Thread Synchronization | C | Mutex, condition variables, deadlock avoidance |
-| [Lab 4](#lab-4--custom-cpu-scheduler) | Custom CPU Scheduler | C | IPC, POSIX MQ, virtual time, FCFS/RR/HPF |
-| [Project](#project--redlock-distributed-locking) | Redlock Distributed Locking | Python | Distributed systems, Redis, quorum consensus |
+| [lab 4](#project--redlock-distributed-locking) | Redlock Distributed Locking | Python | Distributed systems, Redis, quorum consensus |
+| [Lab 5](#lab-4--custom-cpu-scheduler) | Custom CPU Scheduler | C | IPC, POSIX MQ, virtual time, FCFS/RR/HPF |
 
 ---
 
@@ -67,7 +67,26 @@ gcc -o caltrain caltrain_runner.c caltrain.c -lpthread
 
 ---
 
-## Lab 4 — Custom CPU Scheduler
+
+## lab 4 — Redlock Distributed Locking
+
+A simulation of the Redlock distributed mutual exclusion algorithm across 5 independent Redis nodes running in Docker.
+
+**Key concepts:**
+- Distributed locking with quorum consensus (≥3/5 nodes)
+- Atomic lock release via Lua scripting
+- 5 concurrent client processes competing for a shared resource
+
+```bash
+docker-compose up -d
+pip install -r requirements.txt
+python3 redlock_simulation.py
+```
+
+---
+
+
+## Lab 5 — Custom CPU Scheduler
 
 A deterministic OS process scheduler simulation using Virtual Time, POSIX Message Queues for IPC, and UNIX signals for process control.
 
@@ -88,23 +107,6 @@ make
 | FCFS | 93.33% | 5.75 | 2.25 |
 | RR (Q=3) | 93.33% | 6.25 | 2.75 |
 | HPF | 93.33% | 6.00 | 2.50 |
-
----
-
-## Project — Redlock Distributed Locking
-
-A simulation of the Redlock distributed mutual exclusion algorithm across 5 independent Redis nodes running in Docker.
-
-**Key concepts:**
-- Distributed locking with quorum consensus (≥3/5 nodes)
-- Atomic lock release via Lua scripting
-- 5 concurrent client processes competing for a shared resource
-
-```bash
-docker-compose up -d
-pip install -r requirements.txt
-python3 redlock_simulation.py
-```
 
 ---
 
